@@ -1,9 +1,15 @@
 const readline = require('readline-sync')
-function start(){
+ robo ={
+     text: require('./robots/text.js')
+    }
+async function start(){
     const content = {}
     content.pesquisaTermo = PerguntaEretornaTermo()
     content.prefixo = PerguntaEretornaPrefixo()
-    function    PerguntaEretornaTermo(){
+  
+   await robo.text(content)
+    
+function PerguntaEretornaTermo(){
         return readline.question(' Type a Wikipedia Search term: ')
     }
     
@@ -15,7 +21,7 @@ function start(){
         return SelecionarPrefixoText
 
     }
-   
+    
     console.log(content)
 }
 start()
